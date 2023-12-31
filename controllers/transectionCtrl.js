@@ -26,33 +26,27 @@ const getAllTransection = async (req, res) => {
   }
 };
 
-const editTransection = async(req,res)=>{
-   try{
-        await transectionModel.findOneAndUpdate(
-          {_id:req.body.transactionId},
-            req.body.payload
-          );
-          res.status(200).send('Edit Successfully');
-   } catch(error){
-    console.log(error)
-    res.status(500).json(error);
-   }
-};
-
-const deleteTransection = async(req,res) =>{
-  try{
-      await transectionModel.findOneAndDelete(
-        {_id:req.body.transactionId},
-         res.status(200).send('Transaction Deleted')
-        
-        )
-
-  } catch(error){
+const deleteTransection = async (req, res) => {
+  try {
+    await transectionModel.findOneAndDelete({ _id: req.body.transacationId });
+    res.status(200).send("Transaction Deleted!");
+  } catch (error) {
     console.log(error);
     res.status(500).json(error);
   }
-
-}
+};
+const editTransection = async (req, res) => {
+  try {
+    await transectionModel.findOneAndUpdate(
+      { _id: req.body.transacationId },
+      req.body.payload
+    );
+    res.status(200).send("Edit SUccessfully");
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
 
 const addTransection = async (req, res) => {
   try {
@@ -66,4 +60,9 @@ const addTransection = async (req, res) => {
   }
 };
 
-module.exports = { getAllTransection, addTransection,editTransection ,deleteTransection};
+module.exports = {
+  getAllTransection,
+  addTransection,
+  editTransection,
+  deleteTransection,
+};

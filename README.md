@@ -1,2 +1,2 @@
-# expense_application
-MERN STACK EXPENSE TRACKER APPLICATION
+# prouction-Expense-app-mern
+expense mern stack app

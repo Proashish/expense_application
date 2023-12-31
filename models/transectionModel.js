@@ -2,21 +2,21 @@ const mongoose = require("mongoose");
 
 const transectionSchema = new mongoose.Schema(
   {
-    userid:{
-      type:String,
-      required:true,
+    userid: {
+      type: String,
+      required: true,
     },
     amount: {
       type: Number,
       required: [true, "amount is required"],
     },
-    type:{
-      type:String,
-      required:[true,'type is  required']
+    type: {
+      type: String,
+      required: [true, "type is required"],
     },
     category: {
       type: String,
-      required: [true, "cat is required"],
+      requires: [true, "cat is required"],
     },
     refrence: {
       type: String,
@@ -33,6 +33,5 @@ const transectionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const transectionModel = mongoose.model("transactions", transectionSchema);
-
+const transectionModel = mongoose.model("transections", transectionSchema);
 module.exports = transectionModel;
